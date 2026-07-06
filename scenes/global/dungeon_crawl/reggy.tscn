@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://cvt3f2a4ylhlr"]
+[gd_scene format=3 uid="uid://cvt3f2a4ylhlr"]
 
 [ext_resource type="Texture2D" uid="uid://civ6p8kylik3g" path="res://gfx/sprites/reggy.jpg" id="1_d128c"]
 [ext_resource type="Script" uid="uid://1sxaujdp080j" path="res://scripts/reggy.gd" id="2_loc5f"]
@@ -23,31 +23,31 @@ material = SubResource("StandardMaterial3D_ln6b5")
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_bpsab"]
 height = 1.82
 
-[node name="Reggie" type="CharacterBody3D"]
+[node name="Reggie" type="CharacterBody3D" unique_id=286647422]
 script = ExtResource("2_loc5f")
 
-[node name="reggy" type="MeshInstance3D" parent="."]
+[node name="reggy" type="MeshInstance3D" parent="." unique_id=1119286018]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 0, 0.91, 0)
 cast_shadow = 0
 mesh = SubResource("CapsuleMesh_e0pj0")
 
-[node name="reggy eyes" type="Camera3D" parent="."]
+[node name="reggy eyes" type="Camera3D" parent="." unique_id=636886735]
 transform = Transform3D(1.31134e-07, 0, 1, 0, 1, 0, -1, 0, 1.31134e-07, 0, 1.7, 0)
 current = true
 far = 128.0
 
-[node name="front cam" type="Camera3D" parent="reggy eyes"]
+[node name="front cam" type="Camera3D" parent="reggy eyes" unique_id=985048649]
 transform = Transform3D(-1, -2.18557e-08, -9.32788e-08, -2.18557e-08, 1, 2.38419e-07, 9.32788e-08, 2.38419e-07, -1, 0, 0, -4)
 
-[node name="lakitu cam" type="Camera3D" parent="reggy eyes"]
+[node name="lakitu cam" type="Camera3D" parent="reggy eyes" unique_id=2062538577]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 4.064)
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="reggy eyes"]
+[node name="MeshInstance3D" type="MeshInstance3D" parent="reggy eyes" unique_id=852093034]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0, 0.295512, 0)
 cast_shadow = 0
 mesh = SubResource("BoxMesh_3b88h")
 
-[node name="OmniLight3D" type="OmniLight3D" parent="."]
+[node name="OmniLight3D" type="OmniLight3D" parent="." unique_id=1352342565]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 0, 0.91, 0)
 light_color = Color(1, 0.75, 0, 1)
 light_energy = 1.5
@@ -60,37 +60,37 @@ distance_fade_shadow = 32.0
 distance_fade_length = 8.0
 omni_range = 12.599
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=170661629]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.91, 0)
 shape = SubResource("CapsuleShape3D_bpsab")
 
-[node name="Area3D" type="Area3D" parent="."]
+[node name="Area3D" type="Area3D" parent="." unique_id=1842670608]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D" unique_id=517172551]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.91, 0)
 shape = SubResource("CapsuleShape3D_bpsab")
 
-[node name="reggy flashlight" type="SpotLight3D" parent="."]
+[node name="reggy flashlight" type="SpotLight3D" parent="." unique_id=469678077]
 transform = Transform3D(-0.258819, 0, 0.965926, 0, 1, 0, -0.965926, 0, -0.258819, 0, 1, -1)
 visible = false
 light_energy = 5.0
 spot_range = 10.0
 spot_angle = 24.0
 
-[node name="blood" parent="." instance=ExtResource("3_hcwon")]
+[node name="blood" parent="." unique_id=171696060 instance=ExtResource("3_hcwon")]
 transform = Transform3D(0.990268, -0.139173, 0, 0.139173, 0.990268, 0, 0, 0, 1, -0.25, 0.25, 0)
 
-[node name="reggy mouth" type="AudioStreamPlayer3D" parent="."]
+[node name="reggy mouth" type="AudioStreamPlayer3D" parent="." unique_id=1315034373]
 stream = ExtResource("4_u8bq0")
 
-[node name="GPUParticlesCollisionBox3D" type="GPUParticlesCollisionBox3D" parent="."]
+[node name="GPUParticlesCollisionBox3D" type="GPUParticlesCollisionBox3D" parent="." unique_id=232000211]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.5, 0)
 size = Vector3(10, 1, 8)
 
-[node name="Particles" type="Node3D" parent="."]
+[node name="Particles" type="Node3D" parent="." unique_id=1386206321]
 
-[node name="dirt_particles" parent="Particles" instance=ExtResource("5_1ey2p")]
+[node name="dirt_particles" parent="Particles" unique_id=47972971 instance=ExtResource("5_1ey2p")]
 
-[node name="dirt_particles2" parent="Particles" instance=ExtResource("6_q575p")]
+[node name="dirt_particles2" parent="Particles" unique_id=1809984856 instance=ExtResource("6_q575p")]
 
 [connection signal="area_entered" from="Area3D" to="." method="_on_area_3d_area_entered"]

@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://clskw70lcupwn"]
+[gd_scene format=3 uid="uid://clskw70lcupwn"]
 
 [ext_resource type="Script" uid="uid://cn4ptmbjg8oaa" path="res://scripts/cell.gd" id="1_6h6g0"]
 [ext_resource type="Material" uid="uid://bq22wox10tiej" path="res://gfx/materials/cell_brick.tres" id="2_7sx7f"]
@@ -15,98 +15,98 @@ size = Vector2(3, 3)
 [sub_resource type="BoxShape3D" id="BoxShape3D_xjq6r"]
 size = Vector3(3, 0, 3)
 
-[node name="Node3D" type="Node3D"]
+[node name="Node3D" type="Node3D" unique_id=1450128127]
 script = ExtResource("1_6h6g0")
 
-[node name="floor" type="MeshInstance3D" parent="."]
+[node name="floor" type="MeshInstance3D" parent="." unique_id=1357174426]
 mesh = SubResource("PlaneMesh_aa7xv")
 
-[node name="floor" type="StaticBody3D" parent="floor" groups=["floor"]]
+[node name="floor" type="StaticBody3D" parent="floor" unique_id=282566777 groups=["floor"]]
 script = ExtResource("3_7sx7f")
 surface_properties = ExtResource("4_p0lig")
 particle_process_material = ExtResource("5_c56jv")
 particle_draw_pass = ExtResource("6_g1qhk")
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="floor/floor"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="floor/floor" unique_id=1516870381]
 shape = SubResource("BoxShape3D_xjq6r")
 
-[node name="OccluderInstance3D" type="OccluderInstance3D" parent="floor"]
+[node name="OccluderInstance3D" type="OccluderInstance3D" parent="floor" unique_id=807062461]
 occluder = ExtResource("3_p0lig")
 
-[node name="back" type="MeshInstance3D" parent="."]
+[node name="back" type="MeshInstance3D" parent="." unique_id=1556608160]
 transform = Transform3D(-4.37114e-08, 1, 0, 4.37114e-08, 1.91069e-15, -1, -1, -4.37114e-08, -4.37114e-08, -1.5, 1.5, 0)
 visible = false
 mesh = SubResource("PlaneMesh_aa7xv")
 
-[node name="StaticBody3D" type="StaticBody3D" parent="back"]
+[node name="StaticBody3D" type="StaticBody3D" parent="back" unique_id=813166512]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="back/StaticBody3D"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="back/StaticBody3D" unique_id=149213909]
 transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, 0, 0, 0)
 shape = SubResource("BoxShape3D_xjq6r")
 disabled = true
 
-[node name="OccluderInstance3D" type="OccluderInstance3D" parent="back"]
+[node name="OccluderInstance3D" type="OccluderInstance3D" parent="back" unique_id=573742]
 occluder = ExtResource("3_p0lig")
 
-[node name="ceiling" type="MeshInstance3D" parent="."]
+[node name="ceiling" type="MeshInstance3D" parent="." unique_id=1895642075]
 transform = Transform3D(-1, -8.74228e-08, 0, 8.74228e-08, -1, 0, 0, 0, 1, 0, 3, 0)
 mesh = SubResource("PlaneMesh_aa7xv")
 skeleton = NodePath("../back")
 
-[node name="StaticBody3D" type="StaticBody3D" parent="ceiling"]
+[node name="StaticBody3D" type="StaticBody3D" parent="ceiling" unique_id=361111980]
 collision_layer = 0
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="ceiling/StaticBody3D"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="ceiling/StaticBody3D" unique_id=115107480]
 transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, 0, 0, 0)
 shape = SubResource("BoxShape3D_xjq6r")
 
-[node name="OccluderInstance3D" type="OccluderInstance3D" parent="ceiling"]
+[node name="OccluderInstance3D" type="OccluderInstance3D" parent="ceiling" unique_id=1603791008]
 occluder = ExtResource("3_p0lig")
 
-[node name="left" type="MeshInstance3D" parent="."]
+[node name="left" type="MeshInstance3D" parent="." unique_id=1675334706]
 transform = Transform3D(1, -1.50996e-07, 8.74227e-08, 8.74227e-08, 4.37114e-08, -1, 1.50996e-07, 1, 4.37114e-08, 0, 1.5, -1.5)
 visible = false
 mesh = SubResource("PlaneMesh_aa7xv")
 skeleton = NodePath("../front")
 
-[node name="StaticBody3D" type="StaticBody3D" parent="left"]
+[node name="StaticBody3D" type="StaticBody3D" parent="left" unique_id=945240474]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="left/StaticBody3D"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="left/StaticBody3D" unique_id=144204680]
 transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, 0, 0, 0)
 shape = SubResource("BoxShape3D_xjq6r")
 disabled = true
 
-[node name="OccluderInstance3D" type="OccluderInstance3D" parent="left"]
+[node name="OccluderInstance3D" type="OccluderInstance3D" parent="left" unique_id=377605962]
 occluder = ExtResource("3_p0lig")
 
-[node name="front" type="MeshInstance3D" parent="."]
+[node name="front" type="MeshInstance3D" parent="." unique_id=1315383433]
 transform = Transform3D(0, -1, 0, -4.37114e-08, 0, -1, 1, 0, -4.37114e-08, 1.5, 1.5, 0)
 visible = false
 mesh = SubResource("PlaneMesh_aa7xv")
 skeleton = NodePath("../back")
 
-[node name="StaticBody3D" type="StaticBody3D" parent="front"]
+[node name="StaticBody3D" type="StaticBody3D" parent="front" unique_id=152927522]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="front/StaticBody3D"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="front/StaticBody3D" unique_id=1301511143]
 transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, 0, 0, 0)
 shape = SubResource("BoxShape3D_xjq6r")
 disabled = true
 
-[node name="OccluderInstance3D" type="OccluderInstance3D" parent="front"]
+[node name="OccluderInstance3D" type="OccluderInstance3D" parent="front" unique_id=807544100]
 occluder = ExtResource("3_p0lig")
 
-[node name="right" type="MeshInstance3D" parent="."]
+[node name="right" type="MeshInstance3D" parent="." unique_id=74240354]
 transform = Transform3D(-1, 1.02324e-07, -4.37114e-08, 4.37114e-08, -1.96036e-14, -1, -8.74228e-08, -1, 3.19744e-14, 0, 1.5, 1.5)
 visible = false
 mesh = SubResource("PlaneMesh_aa7xv")
 skeleton = NodePath("../left")
 
-[node name="StaticBody3D" type="StaticBody3D" parent="right"]
+[node name="StaticBody3D" type="StaticBody3D" parent="right" unique_id=797654315]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="right/StaticBody3D"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="right/StaticBody3D" unique_id=1049869743]
 transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, 0, 0, 0)
 shape = SubResource("BoxShape3D_xjq6r")
 disabled = true
 
-[node name="OccluderInstance3D" type="OccluderInstance3D" parent="right"]
+[node name="OccluderInstance3D" type="OccluderInstance3D" parent="right" unique_id=502788321]
 occluder = ExtResource("3_p0lig")

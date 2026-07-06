@@ -1,16 +1,16 @@
-[gd_scene load_steps=5 format=3 uid="uid://bnly5uqbvtqg3"]
+[gd_scene format=3 uid="uid://bnly5uqbvtqg3"]
 
 [ext_resource type="Script" uid="uid://b0p3gcesyxelj" path="res://scripts/settings.gd" id="1_5p8wc"]
 [ext_resource type="Script" uid="uid://pfopgmc4i573" path="res://scripts/h_slider.gd" id="2_f4mfi"]
 [ext_resource type="Script" uid="uid://c81kv81kckgkb" path="res://scripts/label_2_rd.gd" id="2_r6d6q"]
 [ext_resource type="Script" uid="uid://mf8xak5pkpca" path="res://scripts/label_3.gd" id="3_6wm04"]
 
-[node name="Node2D" type="Node2D"]
+[node name="Settings Menu" type="Node2D" unique_id=368108983]
 script = ExtResource("1_5p8wc")
 
-[node name="Render Scale" type="Node2D" parent="."]
+[node name="Render Scale" type="Node2D" parent="." unique_id=1340002769]
 
-[node name="HSlider" type="HSlider" parent="Render Scale"]
+[node name="HSlider" type="HSlider" parent="Render Scale" unique_id=399821658]
 offset_left = 120.0
 offset_top = 64.0
 offset_right = 336.0
@@ -22,7 +22,7 @@ value = 1.0
 script = ExtResource("2_f4mfi")
 metadata/_edit_use_anchors_ = true
 
-[node name="Label" type="Label" parent="Render Scale"]
+[node name="Label" type="Label" parent="Render Scale" unique_id=1757554993]
 offset_left = 128.0
 offset_top = 32.0
 offset_right = 228.0
@@ -30,7 +30,7 @@ offset_bottom = 55.0
 text = "Render Scale"
 metadata/_edit_use_anchors_ = true
 
-[node name="Label2" type="Label" parent="Render Scale"]
+[node name="Label2" type="Label" parent="Render Scale" unique_id=1903894783]
 offset_left = 80.0
 offset_top = 56.0
 offset_right = 120.0
@@ -39,7 +39,7 @@ text = "1.0"
 script = ExtResource("2_r6d6q")
 metadata/_edit_use_anchors_ = true
 
-[node name="Label3" type="Label" parent="Render Scale"]
+[node name="Label3" type="Label" parent="Render Scale" unique_id=1560799770]
 offset_left = 336.0
 offset_top = 56.0
 offset_right = 376.0
@@ -47,24 +47,24 @@ offset_bottom = 79.0
 script = ExtResource("3_6wm04")
 metadata/_edit_use_anchors_ = true
 
-[node name="Button" type="Button" parent="Render Scale"]
+[node name="Button" type="Button" parent="Render Scale" unique_id=178020760]
 offset_left = 16.0
 offset_top = 48.0
 offset_right = 67.0
 offset_bottom = 79.0
 text = "Reset"
 
-[node name="GridContainer" type="GridContainer" parent="."]
+[node name="GridContainer" type="GridContainer" parent="." unique_id=676119556]
 offset_left = 120.0
 offset_top = 152.0
 offset_right = 219.0
 offset_bottom = 192.0
 
-[node name="Label" type="Label" parent="GridContainer"]
+[node name="Label" type="Label" parent="GridContainer" unique_id=1081609730]
 layout_mode = 2
 text = "Anti-Aliasing"
 
-[node name="OptionButton" type="OptionButton" parent="GridContainer"]
+[node name="OptionButton" type="OptionButton" parent="GridContainer" unique_id=33259282]
 layout_mode = 2
 item_count = 6
 popup/item_0/text = "None"
@@ -80,17 +80,17 @@ popup/item_4/id = 4
 popup/item_5/text = "TAA"
 popup/item_5/id = 5
 
-[node name="GridContainer2" type="GridContainer" parent="."]
+[node name="GridContainer2" type="GridContainer" parent="." unique_id=1951146310]
 offset_left = 448.0
 offset_top = 24.0
 offset_right = 610.0
 offset_bottom = 82.0
 
-[node name="Label" type="Label" parent="GridContainer2"]
+[node name="Label" type="Label" parent="GridContainer2" unique_id=1327295117]
 layout_mode = 2
 text = "Scaling Mode"
 
-[node name="OptionButton2" type="OptionButton" parent="GridContainer2"]
+[node name="OptionButton2" type="OptionButton" parent="GridContainer2" unique_id=1725723712]
 layout_mode = 2
 item_count = 3
 popup/item_0/text = "Bilinear (Fastest)"

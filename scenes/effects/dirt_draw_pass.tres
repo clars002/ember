@@ -1,4 +1,4 @@
-[gd_resource type="PlaneMesh" load_steps=3 format=3 uid="uid://cd3efdrvxbsh2"]
+[gd_resource type="PlaneMesh" format=3 uid="uid://cd3efdrvxbsh2"]
 
 [ext_resource type="Texture2D" uid="uid://chef2qm5i6sr0" path="res://gfx/sprites/generic_particle.png" id="1_kubjc"]
 

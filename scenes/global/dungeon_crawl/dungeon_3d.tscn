@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://b1jbqedynlb1k"]
+[gd_scene format=3 uid="uid://b1jbqedynlb1k"]
 
 [ext_resource type="Script" uid="uid://kbwt50c87gam" path="res://scripts/node_3d.gd" id="1_npb6m"]
 [ext_resource type="PackedScene" uid="uid://ba527fe1uud0s" path="res://scenes/global/dungeon_crawl/dungeon_environment.tscn" id="2_npb6m"]
@@ -6,25 +6,27 @@
 [ext_resource type="PackedScene" uid="uid://cvt3f2a4ylhlr" path="res://scenes/global/dungeon_crawl/reggy.tscn" id="4_1er0e"]
 [ext_resource type="PackedScene" uid="uid://bhlibesm0qf4a" path="res://scenes/global/dungeon_crawl/wow_button.tscn" id="5_rjs75"]
 [ext_resource type="PackedScene" uid="uid://dw2h3gl3efj1t" path="res://scenes/ui_scenes/debug_overlay.tscn" id="6_fknfr"]
+[ext_resource type="Script" uid="uid://dpxslpf00mwx3" path="res://scenes/ui_scenes/debug_overlay.gd" id="6_q1ff6"]
 [ext_resource type="PackedScene" uid="uid://dbx5bt6u40ht4" path="res://scenes/ui_scenes/pause.tscn" id="7_f4g2e"]
 
-[node name="Dungeon 3D" type="Node3D"]
+[node name="Dungeon 3D" type="Node3D" unique_id=1713659424]
 process_mode = 1
 script = ExtResource("1_npb6m")
 current_map = "uid://vbfety75snuc"
 
-[node name="WorldEnvironment" parent="." instance=ExtResource("2_npb6m")]
+[node name="WorldEnvironment" parent="." unique_id=1039792212 instance=ExtResource("2_npb6m")]
 
-[node name="Reggie" parent="." instance=ExtResource("4_1er0e")]
+[node name="Reggie" parent="." unique_id=1739920239 instance=ExtResource("4_1er0e")]
 transform = Transform3D(2.98023e-08, 0, 1, 0, 1, 0, -1, 0, 2.98023e-08, 0, 0, 0)
 
-[node name="WowButton" parent="Reggie" instance=ExtResource("5_rjs75")]
+[node name="WowButton" parent="Reggie" unique_id=1350672622 instance=ExtResource("5_rjs75")]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -2, 1.7, 0)
 
-[node name="DebugOverlay" parent="." instance=ExtResource("6_fknfr")]
+[node name="DebugOverlay" parent="." unique_id=978418929 instance=ExtResource("6_fknfr")]
+z_index = 1
+script = ExtResource("6_q1ff6")
 
-[node name="PauseMenu" parent="." instance=ExtResource("7_f4g2e")]
-visible = false
+[node name="PauseMenu" parent="." unique_id=1379125211 instance=ExtResource("7_f4g2e")]
 
-[node name="Music" type="AudioStreamPlayer" parent="."]
+[node name="Music" type="AudioStreamPlayer" parent="." unique_id=1881306434]
 stream = ExtResource("3_e1k86")

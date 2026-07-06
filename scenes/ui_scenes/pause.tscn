@@ -1,19 +1,41 @@
-[gd_scene load_steps=4 format=3 uid="uid://dbx5bt6u40ht4"]
+[gd_scene format=3 uid="uid://dbx5bt6u40ht4"]
 
+[ext_resource type="Script" uid="uid://dba4qaua7i31v" path="res://scenes/ui_scenes/pause.gd" id="1_38yxj"]
 [ext_resource type="Script" uid="uid://mm41mqx2dqpv" path="res://scripts/pause.gd" id="1_f1d2v"]
 [ext_resource type="PackedScene" uid="uid://bnly5uqbvtqg3" path="res://scenes/ui_scenes/settings.tscn" id="2_r8yp4"]
+[ext_resource type="AudioStream" uid="uid://bmwsorbiif3cw" path="res://audio/cantaloupe.ogg" id="3_44pb3"]
+[ext_resource type="PackedScene" uid="uid://bf4y26v170qvj" path="res://scenes/effects/reggie_cube.tscn" id="3_ps4el"]
+
+[sub_resource type="Gradient" id="Gradient_2ytgf"]
+colors = PackedColorArray(0, 0, 1, 1, 0, 0, 0, 0)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_ps4el"]
+gradient = SubResource("Gradient_2ytgf")
 
 [sub_resource type="LabelSettings" id="LabelSettings_m68o1"]
 font_size = 64
 
-[node name="Pause Menu" type="Node2D"]
+[sub_resource type="ViewportTexture" id="ViewportTexture_44pb3"]
+viewport_path = NodePath("PauseMenu/SubViewport")
+
+[node name="PauseController" type="Node2D" unique_id=2007077278]
+visible = false
+script = ExtResource("1_38yxj")
+
+[node name="PauseMenu" type="Node2D" parent="." unique_id=798837409]
 script = ExtResource("1_f1d2v")
 
-[node name="Polygon2D" type="Polygon2D" parent="."]
-color = Color(0.0999999, 0, 1, 0.498039)
+[node name="Polygon2D" type="Polygon2D" parent="PauseMenu" unique_id=123019354]
+texture = SubResource("GradientTexture1D_ps4el")
+texture_scale = Vector2(-0.18, -0.18)
+texture_rotation = 1.5707964
 polygon = PackedVector2Array(0, 0, 1920, 0, 1920, 1088, 0, 1088)
 
-[node name="Label" type="Label" parent="."]
+[node name="PausedScreenshot" type="Sprite2D" parent="PauseMenu" unique_id=1803359801]
+z_index = -1
+offset = Vector2(960, 540)
+
+[node name="Label" type="Label" parent="PauseMenu" unique_id=1248970983]
 offset_left = 808.0
 offset_top = 192.0
 offset_right = 1100.0
@@ -21,13 +43,35 @@ offset_bottom = 280.0
 text = "~ Pause ~"
 label_settings = SubResource("LabelSettings_m68o1")
 
-[node name="Button" type="Button" parent="."]
+[node name="Button" type="Button" parent="PauseMenu" unique_id=1166391827]
 offset_left = 864.0
-offset_top = 824.0
+offset_top = 864.0
 offset_right = 1056.0
-offset_bottom = 904.0
+offset_bottom = 944.0
 text = "Exit Game"
 
-[node name="Node2D" parent="." instance=ExtResource("2_r8yp4")]
+[node name="SettingsMenu" parent="PauseMenu" unique_id=557873552 instance=ExtResource("2_r8yp4")]
 
-[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
+[node name="Sprite2D" type="Sprite2D" parent="PauseMenu" unique_id=1643483762]
+z_index = 1
+position = Vector2(960, 576)
+texture = SubResource("ViewportTexture_44pb3")
+
+[node name="PauseBgm" type="AudioStreamPlayer" parent="PauseMenu" unique_id=1831600947]
+unique_name_in_owner = true
+stream = ExtResource("3_44pb3")
+
+[node name="SubViewport" type="SubViewport" parent="PauseMenu" unique_id=1565828468]
+own_world_3d = true
+transparent_bg = true
+
+[node name="ReggieCube" parent="PauseMenu/SubViewport" unique_id=2047848152 instance=ExtResource("3_ps4el")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -128, 0)
+
+[node name="BgmTimer" type="Timer" parent="." unique_id=480411498]
+wait_time = 90.0
+one_shot = true
+
+[connection signal="pressed" from="PauseMenu/Button" to="PauseMenu" method="_on_button_pressed"]
+[connection signal="settings_changed" from="PauseMenu/SettingsMenu" to="." method="_on_settings_menu_settings_changed"]
+[connection signal="timeout" from="BgmTimer" to="." method="_on_bgm_timer_timeout"]

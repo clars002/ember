@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://dc8ba3qufdqae"]
+[gd_scene format=3 uid="uid://dc8ba3qufdqae"]
 
 [ext_resource type="PackedScene" uid="uid://clskw70lcupwn" path="res://scenes/terrain/cell_brick.tscn" id="1_1nkmi"]
 [ext_resource type="Material" uid="uid://cqpyu3mcxsuka" path="res://gfx/materials/floor_ice.tres" id="2_ofcme"]
@@ -30,7 +30,7 @@ size = Vector2(3, 3)
 material = ExtResource("3_jv8n8")
 size = Vector2(3, 3)
 
-[node name="Node3D" instance=ExtResource("1_1nkmi")]
+[node name="Node3D" unique_id=1461646113 instance=ExtResource("1_1nkmi")]
 
 [node name="floor" parent="." index="0"]
 transparency = 0.4
@@ -46,7 +46,7 @@ visible = false
 [node name="back" parent="." index="1"]
 mesh = SubResource("PlaneMesh_5w337")
 
-[node name="MeshInstance3D" parent="back" index="2" instance=ExtResource("4_d7ure")]
+[node name="MeshInstance3D" parent="back" index="2" unique_id=792739418 instance=ExtResource("4_d7ure")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 3)
 
 [node name="ceiling" parent="." index="2"]
@@ -55,17 +55,17 @@ mesh = SubResource("PlaneMesh_iu6n0")
 [node name="left" parent="." index="3"]
 mesh = SubResource("PlaneMesh_180tx")
 
-[node name="MeshInstance3D" parent="left" index="2" instance=ExtResource("4_d7ure")]
+[node name="MeshInstance3D" parent="left" index="2" unique_id=1475507732 instance=ExtResource("4_d7ure")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 3)
 
 [node name="front" parent="." index="4"]
 mesh = SubResource("PlaneMesh_atxpu")
 
-[node name="MeshInstance3D" parent="front" index="2" instance=ExtResource("4_d7ure")]
+[node name="MeshInstance3D" parent="front" index="2" unique_id=1500086810 instance=ExtResource("4_d7ure")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 3)
 
 [node name="right" parent="." index="5"]
 mesh = SubResource("PlaneMesh_2qmq5")
 
-[node name="MeshInstance3D" parent="right" index="2" instance=ExtResource("4_d7ure")]
+[node name="MeshInstance3D" parent="right" index="2" unique_id=317045519 instance=ExtResource("4_d7ure")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 3)

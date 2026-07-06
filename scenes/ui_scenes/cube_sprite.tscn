@@ -1,0 +1,7 @@
+[gd_scene format=3 uid="uid://bugqp0ln3qcki"]
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_yql1r"]
+viewport_path = NodePath("CubeViewport")
+
+[node name="CubeSprite" type="Sprite2D" unique_id=86420739]
+texture = SubResource("ViewportTexture_yql1r")

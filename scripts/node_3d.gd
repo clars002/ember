@@ -24,9 +24,6 @@ func _process(delta: float) -> void:
 			scene.pack(node_to_save)
 			
 			ResourceSaver.save(scene, "res://map_export.tscn")
-		if Input.is_action_just_pressed("pause"):
-			Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
-			get_tree().paused = true
 
 #func _on_tile_map_layer_changed() -> void: # Doesn't work for dynamic map changes; signal isn't emitted when editing from Godot editor
 	#print("TileMapLayer changed!")

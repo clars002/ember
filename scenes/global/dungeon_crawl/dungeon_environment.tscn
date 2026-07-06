@@ -1,4 +1,4 @@
-[gd_scene load_steps=4 format=3 uid="uid://ba527fe1uud0s"]
+[gd_scene format=3 uid="uid://ba527fe1uud0s"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_npb6m"]
 sky_top_color = Color(0.266667, 0, 0.0509804, 1)
@@ -16,9 +16,7 @@ ambient_light_source = 2
 ambient_light_color = Color(0.36, 0.36, 1, 1)
 ambient_light_energy = 0.3
 reflected_light_source = 1
-ssr_max_steps = 32
-ssr_fade_in = 1e-05
-ssr_fade_out = 1e-05
+ssr_depth_tolerance = 7.51
 ssao_enabled = true
 sdfgi_read_sky_light = false
 glow_enabled = true
@@ -32,5 +30,5 @@ volumetric_fog_enabled = true
 volumetric_fog_density = 0.0
 volumetric_fog_length = 32.0
 
-[node name="WorldEnvironment" type="WorldEnvironment"]
+[node name="WorldEnvironment" type="WorldEnvironment" unique_id=1546213028]
 environment = SubResource("Environment_xe672")
